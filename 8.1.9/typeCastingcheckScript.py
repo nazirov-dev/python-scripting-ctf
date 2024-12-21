@@ -1,14 +1,16 @@
 import subprocess
 import os
-
+import time
 # Tekshiradigan faylning yo'li
 script_path = "/home/haady/typeCasting.py"
-flag_dir = "/home/haady/flag"
+flag_dir = "/home/haady/flags"
 flag_file = os.path.join(flag_dir, "typeCasting-Flag.txt")
 
-# Agar fayl mavjud bo'lsa, skriptni ishga tushirish
-if os.path.exists(script_path):
-    try:
+# Infinite loop to check file and write flag
+while True:
+    # Agar fayl mavjud bo'lsa, skriptni ishga tushirish
+    if os.path.exists(script_path):
+        try:
         result = subprocess.run(["python3", script_path], capture_output=True, text=True)
 
         # Agar skript muvaffaqiyatli bajarilsa, flag faylini yaratish
@@ -17,6 +19,7 @@ if os.path.exists(script_path):
             if not os.path.exists(flag_dir):
                 os.makedirs(flag_dir)  # Agar flag papkasi mavjud bo'lmasa, yaratish
             with open(flag_file, "w") as file:
-                file.write("PYTHON{Gr1t_b1l@n_Tur_@yl@nt1r1sh}")
-    except Exception as e:
-        pass
+                    file.write("PYTHON{Gr1t_b1l@n_Tur_@yl@nt1r1sh}\n")
+        except Exception as e:
+            pass
+    time.sleep(60)
