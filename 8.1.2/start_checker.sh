@@ -1,3 +1,2 @@
 #!/bin/bash
-python3 /var/checker_files/firstScriptcheckScript.py &
-echo "after checker script started"
+nohup python3 /var/checker_files/firstScriptcheckScript.py >/dev/null 2>&1 &
