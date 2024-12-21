@@ -14,7 +14,7 @@ while True:
             result = subprocess.run(["python3", script_path], capture_output=True, text=True)
 
             # Agar skript muvaffaqiyatli bajarilsa, flag faylini yaratish
-            if result.returncode == 0 and result.stdout.strip() == "htts://www.offensive-security.cam/offsec/game-hacking-intro/":
+            if result.returncode == 0 and result.stdout.strip() == "https://www.offensive-security.cam/offsec/game-hacking-intro/":
                 # flag faylini yaratish
                 if not os.path.exists(flag_dir):
                     os.makedirs(flag_dir)  # Agar flag papkasi mavjud bo'lmasa, yaratish
