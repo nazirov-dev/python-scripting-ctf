@@ -19,7 +19,7 @@ if os.path.exists(script_path):
                 if not os.path.exists(flag_dir):
                     os.makedirs(flag_dir)  # Agar flag papkasi mavjud bo'lmasa, yaratish
                 with open(flag_file, "w") as file:
-                    file.write("PYTHON{B1Rinchi_Skript_Bajarildi!}\n")
+                    file.write("PYTHON{B1Rinchi_Skript_Bajarildi!}\n\n")
                 break
         except Exception as e:
             pass

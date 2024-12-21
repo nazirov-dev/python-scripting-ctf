@@ -14,7 +14,7 @@ RUN mkdir /var/checker_files
 COPY firstScriptcheckScript.py /var/checker_files/firstScriptcheckScript.py
 
 RUN chmod 777 /var/checker_files/firstScriptcheckScript.py && \
-    python3 /var/checker_files/firstScriptcheckScript.py &
+    echo "python3 /var/checker_files/firstScriptcheckScript.py &" >> /home/haady/.bashrc
 
 USER haady
 WORKDIR /home/haady
