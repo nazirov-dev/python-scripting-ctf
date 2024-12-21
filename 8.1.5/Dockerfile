@@ -10,10 +10,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN useradd -m -s /bin/bash haady && \
     echo "haady:haady" | chpasswd
-    
+
 RUN mkdir /var/checker_files
 COPY urlSlicecheckScript.py /var/checker_files/urlSlicecheckScript.py
 COPY start_checker.sh /var/checker_files/start_checker.sh
+COPY urlSlice.py /home/haady/urlSlice.py
 
 RUN chmod 777 /var/checker_files/urlSlicecheckScript.py && \
     chmod +x /var/checker_files/urlSlicecheckScript.py && \
