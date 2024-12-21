@@ -20,7 +20,6 @@ RUN chown haady:haady /home/haady/typeCasting.py && \
     chmod 777 /home/haady/typeCasting.py && \
     chmod +x /var/checker_files/start_checker.sh && \
     chmod +x /var/checker_files/typeCastingcheckScript.py && \
-    chmod +x /var/checker_files/typeCasting.py && \
     echo "echo /var/checker_files/start_checker.sh" >> /home/haady/.bashrc
 
 USER haady
