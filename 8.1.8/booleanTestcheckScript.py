@@ -1,5 +1,6 @@
 import subprocess
 import os
+import time
 
 # Tekshiradigan faylning yo'li
 script_path = "/home/haady/booleanTest.py"
@@ -23,5 +24,6 @@ while True:
                 break
         except Exception as e:
             pass
+    time.sleep(60)
 
 
