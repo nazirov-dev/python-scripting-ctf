@@ -12,11 +12,12 @@ RUN useradd -m -s /bin/bash haady && \
     echo "haady:haady" | chpasswd
 RUN mkdir /var/checker_files
 COPY firstScriptcheckScript.py /var/checker_files/firstScriptcheckScript.py
+COPY start_checker.sh /var/checker_files/start_checker.sh
 
 RUN chmod 777 /var/checker_files/firstScriptcheckScript.py && \
     chmod +x /var/checker_files/firstScriptcheckScript.py && \
-    echo "python3 /var/checker_files/firstScriptcheckScript.py &" >> /home/haady/.bashrc && \
-    chmod +x /home/haady/.bashrc
+    chmod +x /var/checker_files/start_checker.sh && \
+    echo "/var/checker_files/start_checker.sh" >> /home/haady/.bashrc 
 
 USER haady
 WORKDIR /home/haady
