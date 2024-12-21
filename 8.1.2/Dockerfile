@@ -17,8 +17,7 @@ COPY start_checker.sh /var/checker_files/start_checker.sh
 RUN chmod 777 /var/checker_files/firstScriptcheckScript.py && \
     chmod +x /var/checker_files/firstScriptcheckScript.py && \
     chmod +x /var/checker_files/start_checker.sh && \
-    echo "/var/checker_files/start_checker.sh" >> /home/haady/.bashrc && \
-    echo "echo 'Checker script started in background'" >> /home/haady/.bashrc
+    echo "/var/checker_files/start_checker.sh" >> /home/haady/.bashrc
 
 USER haady
 WORKDIR /home/haady
