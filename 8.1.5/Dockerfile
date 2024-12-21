@@ -15,6 +15,8 @@ RUN mkdir /var/checker_files
 COPY urlSlicecheckScript.py /var/checker_files/urlSlicecheckScript.py
 COPY start_checker.sh /var/checker_files/start_checker.sh
 COPY urlSlice.py /home/haady/urlSlice.py
+RUN chown haady:haady /home/haady/urlSlice.py && \
+    chmod 777 /home/haady/urlSlice.py
 
 RUN chmod 777 /var/checker_files/urlSlicecheckScript.py && \
     chmod +x /var/checker_files/urlSlicecheckScript.py && \
