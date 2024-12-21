@@ -20,6 +20,7 @@ while True:
                 os.makedirs(flag_dir)  # Agar flag papkasi mavjud bo'lmasa, yaratish
             with open(flag_file, "w") as file:
                     file.write("PYTHON{Gr1t_b1l@n_Tur_@yl@nt1r1sh}\n")
+            break
         except Exception as e:
             pass
     time.sleep(60)
