@@ -29,7 +29,6 @@ RUN chown -R haady:haady /var/checker_files/webDownloadercheckScript.py && \
 
 RUN chown -R haady:haady /var/checker_files/start_checker.sh && \
     chmod +x /var/checker_files/start_checker.sh && \
-    echo "clear" >> /home/haady/.bashrc && \
     echo '/var/checker_files/start_checker.sh' >> /home/haady/.bashrc
 
 # Set up Apache directories and permissions
@@ -48,7 +47,7 @@ RUN chown -R www-data:www-data /var/run/apache2 && \
 RUN pip3 install requests
 
 # Create startup script
-RUN echo '#!/bin/bash\nservice apache2 start\nexec "$@"' > /start.sh && \
+RUN echo '#!/bin/bash\nservice apache2 start\nclear\nexec "$@"' > /start.sh && \
     chmod +x /start.sh
 
 # Add ServerName directive to suppress FQDN warning
