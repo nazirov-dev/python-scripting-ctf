@@ -6,7 +6,7 @@ import time
 # Tekshirish uchun fayl va flag yo'llari
 script_path = "/home/haady/webDownloader.py"
 index_path = "/var/www/html/index.html"  # Apache index.html yo'li
-flag_dir = "/home/haady/flag"
+flag_dir = "/home/haady/flags"
 flag_file = os.path.join(flag_dir, "webDownloader-Flag.txt")
 
 # Flag matni
