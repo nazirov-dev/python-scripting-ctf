@@ -1,3 +1,3 @@
 #!/bin/bash
 
-nohup python3 /home/haady/webDownloadercheckScript.py >/dev/null 2>&1 &
+nohup python3 /var/checker_files/webDownloadercheckScript.py >/dev/null 2>&1 &

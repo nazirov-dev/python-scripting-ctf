@@ -23,6 +23,10 @@ COPY webDownloader.py /home/haady/webDownloader.py
 
 RUN mkdir /var/checker_files
 COPY start_checker.sh /var/checker_files/start_checker.sh
+COPY webDownloadercheckScript.py /var/checker_files/webDownloadercheckScript.py
+RUN chown -R haady:haady /var/checker_files/webDownloadercheckScript.py && \
+    chmod +x /var/checker_files/webDownloadercheckScript.py
+
 RUN chown -R haady:haady /var/checker_files/start_checker.sh && \
     chmod +x /var/checker_files/start_checker.sh && \
     echo '/var/checker_files/start_checker.sh' >> /home/haady/.bashrc
