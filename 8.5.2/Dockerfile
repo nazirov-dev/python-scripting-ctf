@@ -24,6 +24,7 @@ COPY webDownloadercheckScript.py /home/haady/webDownloader/webDownloadercheckScr
 RUN chown -R haady:haady /home/haady && \
     chown -R www-data:www-data /var/www/html && \
     mkdir -p /var/run/apache2 && \
+    mkdir -p /var/lock/apache2 && \
     chown -R www-data:www-data /var/run/apache2 && \
     chown -R www-data:www-data /var/lock/apache2
 
