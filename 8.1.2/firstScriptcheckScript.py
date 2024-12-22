@@ -22,4 +22,4 @@ while True:
     except Exception as e:
         pass
     
-    time.sleep(10)
+    time.sleep(30)

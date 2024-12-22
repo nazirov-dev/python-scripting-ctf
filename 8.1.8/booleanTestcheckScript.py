@@ -25,6 +25,6 @@ while True:
                 break
         except Exception as e:
             pass
-    time.sleep(60)
+    time.sleep(30)
 
 
