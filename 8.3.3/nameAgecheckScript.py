@@ -34,7 +34,7 @@ if check_int_input_usage(script_path):
         # Skriptni ishga tushirish va input berish
         result = subprocess.run(
             ["python3", script_path],
-            input="24\n",
+            input="Haady\n24\n",
             capture_output=True,
             text=True
         )
@@ -43,7 +43,7 @@ if check_int_input_usage(script_path):
             if not os.path.exists(flag_dir):
                 os.makedirs(flag_dir)
             with open(flag_file, "w") as file:
-                file.write("PYTHON{Foydalanuvchini_so'rov_berish}")
+                file.write("PYTHON{Foydalanuvchini_so'rov_berish}\n")
         print(result.stdout.strip())
     except Exception as e:
         pass
