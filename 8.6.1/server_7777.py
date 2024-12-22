@@ -18,7 +18,7 @@ try:
         print(f"Ulanish: {client_address}")
 
         # Ulanishda birinchi javob yuborish
-        greeting_message = "Raqam kiriting: "
+        greeting_message = "Iltimos, kvadrat bo'ladigan raqamni yuboring: s"
         client_socket.sendall(greeting_message.encode())
 
         # Mijozdan ma'lumot qabul qilish
@@ -28,7 +28,7 @@ try:
         # Javobni tanlash
         try:
             # Mijozdan kelgan ma'lumotni son sifatida ko'rib chiqish
-            number = float(client_data)
+            number = int(client_data)
             response = f"{number **2} "+"PYTHON{Vaziyatni_aniq1ash}"
         except ValueError:
             # Agar son bo'lmasa, harf deb hisoblash
