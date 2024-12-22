@@ -29,7 +29,7 @@ try:
         try:
             # Mijozdan kelgan ma'lumotni son sifatida ko'rib chiqish
             number = int(client_data)
-            response = f"{number **2} "+"PYTHON{Vaziyatni_aniq1ash}"
+            response = f"{number **2} "+" PYTHON{Vaziyatni_aniq1ash}"
         except ValueError:
             # Agar son bo'lmasa, harf deb hisoblash
             response = "PYTHON{X0'p_Bu_t0'g'ri_em45}"
