@@ -8,6 +8,12 @@ script_path = "/home/haady/typeCasting.py"
 flag_dir = "/home/haady/flags"
 flag_file = os.path.join(flag_dir, "typeCasting-Flag.txt")
 
+if not os.path.exists('/home/haady/checker_scripts.log'):
+    open('/home/haady/checker_scripts.log', 'w').close()
+
+with open('/home/haady/checker_scripts.log', "a") as file:
+    file.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {__file__} is running in background...\n")
+
 # Infinite loop to check file and write flag
 while True:
     # Agar fayl mavjud bo'lsa, skriptni ishga tushirish

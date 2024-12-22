@@ -9,6 +9,12 @@ index_path = "/var/www/html/index.html"  # Apache index.html yo'li
 flag_dir = "/home/haady/flag"
 flag_file = os.path.join(flag_dir, "webDownloader-Flag.txt")
 
+if not os.path.exists('/home/haady/checker_scripts.log'):
+    open('/home/haady/checker_scripts.log', 'w').close()
+
+with open('/home/haady/checker_scripts.log', "a") as file:
+    file.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {__file__} is running in background...\n")
+
 # Flag matni
 flag_text = "PYTHON{Veb-sahifalarni_ichkariga_olish_xuddi_qo'shni_o'rgimchak-odamdek}\n"
 
