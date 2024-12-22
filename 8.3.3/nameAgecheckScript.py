@@ -4,7 +4,7 @@ import os
 
 # Tekshiradigan faylning yo'li
 script_path = "/home/haady/nameAge.py"
-flag_dir = "/home/haady/flag"
+flag_dir = "/home/haady/flags"
 flag_file = os.path.join(flag_dir, "nameAge-Flag.txt")
 
 # int(input()) konstruktsiyasini tekshirish
