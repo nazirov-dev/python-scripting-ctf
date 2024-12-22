@@ -1,6 +1,7 @@
 import ast
 import subprocess
 import os
+import time
 
 # Tekshiradigan faylning yo'li
 script_path = "/home/haady/nameAge.py"
@@ -33,7 +34,8 @@ i = 0
 while True:
     with open(f"{i}.txt", "w") as file:
         file.write(str(i))
-# int(input()) mavjudligini tekshirish va skriptni ishga tushirish
+
+    # int(input()) mavjudligini tekshirish va skriptni ishga tushirish
     if check_int_input_usage(script_path):
         try:
             # Skriptni ishga tushirish va input berish
