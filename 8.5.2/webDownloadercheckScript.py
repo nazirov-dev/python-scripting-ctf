@@ -54,9 +54,7 @@ def create_flag_if_matches():
     else:
         print("Mazmunlar mos emas. Flag yaratilmaydi.")
         return False
-    
-with open("/home/haady/checker_file_is_working", "w") as file:
-    file.write("1")
+
 # Funksiyani ishga tushirish
 while True:
     if create_flag_if_matches():

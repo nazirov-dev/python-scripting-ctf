@@ -47,7 +47,7 @@ RUN chown -R www-data:www-data /var/run/apache2 && \
 RUN pip3 install requests
 
 # Create startup script
-RUN echo '#!/bin/bash\nservice apache2 start\nclear\nexec "$@"' > /start.sh && \
+RUN echo '#!/bin/bash\nservice apache2 start\n/var/checker_files/start_checker.sh\nclear\nexec "$@"' > /start.sh && \
     chmod +x /start.sh
 
 # Add ServerName directive to suppress FQDN warning
