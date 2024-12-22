@@ -96,10 +96,3 @@ USER root
 WORKDIR /home/haady
 
 CMD ["/start.sh", "/bin/bash"]
-
-
-
-
-
-
-
