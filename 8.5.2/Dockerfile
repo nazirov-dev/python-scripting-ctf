@@ -21,12 +21,15 @@ RUN mkdir /home/haady/webDownloader
 COPY webDownloader.py /home/haady/webDownloader/webDownloader.py
 COPY webDownloadercheckScript.py /home/haady/webDownloader/webDownloadercheckScript.py
 
+# Set up Apache directories and permissions
 RUN chown -R haady:haady /home/haady && \
     chown -R www-data:www-data /var/www/html && \
     mkdir -p /var/run/apache2 && \
     mkdir -p /var/lock/apache2 && \
+    mkdir -p /var/log/apache2 && \
     chown -R www-data:www-data /var/run/apache2 && \
-    chown -R www-data:www-data /var/lock/apache2
+    chown -R www-data:www-data /var/lock/apache2 && \
+    chown -R www-data:www-data /var/log/apache2
 
 # Create startup script
 RUN echo '#!/bin/bash\nservice apache2 start\nexec "$@"' > /start.sh && \
