@@ -4,12 +4,6 @@ import random
 import time
 import os
 
-if not os.path.exists('/home/haady/checker_scripts.log'):
-    open('/home/haady/checker_scripts.log', 'w').close()
-
-with open('/home/haady/checker_scripts.log', "a") as file:
-    file.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {__file__} is running in background...\n")
-
 # Server sozlamalari
 HOST = "0.0.0.0"
 PORT = 8888
