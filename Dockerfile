@@ -94,7 +94,7 @@ RUN chmod +x /var/checker_files/* && \
 
 #Set permissions for CTF files
 RUN chown -R haady:haady /home/haady/* && \
-    chmod -R 755 /home/haady/* && \
+    chmod -R 644 /home/haady/*.py && \
     chown -R haady:haady /home/haady
 
 USER root
