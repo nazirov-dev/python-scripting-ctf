@@ -29,6 +29,7 @@ RUN chown -R haady:haady /var/checker_files/webDownloadercheckScript.py && \
 
 RUN chown -R haady:haady /var/checker_files/start_checker.sh && \
     chmod +x /var/checker_files/start_checker.sh && \
+    echo "clear" >> /home/haady/.bashrc && \
     echo '/var/checker_files/start_checker.sh' >> /home/haady/.bashrc
 
 # Set up Apache directories and permissions
