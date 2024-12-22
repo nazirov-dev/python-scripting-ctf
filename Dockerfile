@@ -92,6 +92,10 @@ COPY start_checker_files.sh /var/checker_files/start_checker_files.sh
 RUN chmod +x /var/checker_files/* && \
     chown -R root:root /var/checker_files/*
 
+#Set permissions for CTF files
+RUN chown -R haady:haady /home/haady/* && \
+    chmod -R 755 /home/haady/*
+
 USER root
 WORKDIR /home/haady
 
