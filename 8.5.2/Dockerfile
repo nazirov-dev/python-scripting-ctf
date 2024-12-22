@@ -27,9 +27,15 @@ RUN chown -R haady:haady /home/haady && \
     mkdir -p /var/run/apache2 && \
     mkdir -p /var/lock/apache2 && \
     mkdir -p /var/log/apache2 && \
-    chown -R www-data:www-data /var/run/apache2 && \
+    mkdir -p /var/www/html/images
+COPY images/* /var/www/html/images/
+COPY index.html /var/www/html/index.html
+RUN chown -R www-data:www-data /var/run/apache2 && \
     chown -R www-data:www-data /var/lock/apache2 && \
-    chown -R www-data:www-data /var/log/apache2
+    chown -R www-data:www-data /var/log/apache2 && \
+    chown -R www-data:www-data /var/www/html/images
+
+
 
 # Create startup script
 RUN echo '#!/bin/bash\nservice apache2 start\nexec "$@"' > /start.sh && \
