@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
     iproute2 \
     net-tools \
     apache2 \
-    wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
