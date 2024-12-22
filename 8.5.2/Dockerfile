@@ -11,15 +11,16 @@ RUN apt-get update && apt-get install -y \
     iproute2 \
     net-tools \
     apache2 \
+    wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash haady && \
     echo "haady:haady" | chpasswd
 
-RUN mkdir /home/haady/webDownloader
-COPY webDownloader.py /home/haady/webDownloader/webDownloader.py
-COPY webDownloadercheckScript.py /home/haady/webDownloader/webDownloadercheckScript.py
+
+COPY webDownloader.py /home/haady/webDownloader.py
+COPY webDownloadercheckScript.py /home/haady/webDownloadercheckScript.py
 
 # Set up Apache directories and permissions
 RUN chown -R haady:haady /home/haady && \
@@ -34,7 +35,7 @@ RUN chown -R www-data:www-data /var/run/apache2 && \
     chown -R www-data:www-data /var/lock/apache2 && \
     chown -R www-data:www-data /var/log/apache2 && \
     chown -R www-data:www-data /var/www/html/images
-
+RUN pip3 install requests
 
 
 # Create startup script
