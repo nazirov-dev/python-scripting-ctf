@@ -1,10 +1,11 @@
 import subprocess
 import os
+import time
 
 # Tekshirish uchun fayl va flag yo'llari
 script_path = "/home/haady/webDownloader.py"
 index_path = "/var/www/html/index.html"  # Apache index.html yo'li
-flag_dir = "/home/haady/flag"
+flag_dir = "/home/haady/flags"
 flag_file = os.path.join(flag_dir, "webDownloader-Flag.txt")
 
 # Flag matni
@@ -36,11 +37,11 @@ def run_script(script_path):
 def create_flag_if_matches():
     index_content = read_index_file(index_path)
     if index_content is None:
-        return
+        return False
 
     script_output = run_script(script_path)
     if script_output is None:
-        return
+        return False
 
     # Mazmunni solishtirish
     if index_content.strip() == script_output.strip():
@@ -49,9 +50,15 @@ def create_flag_if_matches():
         with open(flag_file, "w") as file:
             file.write(flag_text)
         print(f"Flag fayli yaratildi: {flag_file}")
+        return True
     else:
         print("Mazmunlar mos emas. Flag yaratilmaydi.")
+        return False
+    
 
 # Funksiyani ishga tushirish
-create_flag_if_matches()
+while True:
+    if create_flag_if_matches():
+        break
+    time.sleep(30)
 

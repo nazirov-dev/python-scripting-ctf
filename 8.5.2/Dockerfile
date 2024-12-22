@@ -20,7 +20,12 @@ RUN useradd -m -s /bin/bash haady && \
 
 
 COPY webDownloader.py /home/haady/webDownloader.py
-COPY webDownloadercheckScript.py /home/haady/webDownloadercheckScript.py
+
+RUN mkdir /var/checker_files
+COPY start_checker.sh /var/checker_files/start_checker.sh
+RUN chown -R haady:haady /var/checker_files/start_checker.sh && \
+    chmod +x /var/checker_files/start_checker.sh && \
+    echo '/var/checker_files/start_checker.sh' >> /home/haady/.bashrc
 
 # Set up Apache directories and permissions
 RUN chown -R haady:haady /home/haady && \
@@ -36,7 +41,6 @@ RUN chown -R www-data:www-data /var/run/apache2 && \
     chown -R www-data:www-data /var/log/apache2 && \
     chown -R www-data:www-data /var/www/html/images
 RUN pip3 install requests
-
 
 # Create startup script
 RUN echo '#!/bin/bash\nservice apache2 start\nexec "$@"' > /start.sh && \
