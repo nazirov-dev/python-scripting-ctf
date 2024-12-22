@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     iproute2 \
     net-tools \
+    apache2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -17,9 +18,14 @@ RUN mkdir /home/haady/webDownloader
 COPY webDownloader.py /home/haady/webDownloader/webDownloader.py
 COPY webDownloadercheckScript.py /home/haady/webDownloader/webDownloadercheckScript.py
 
-RUN chown -R haady:haady /home/haady
+RUN chown -R haady:haady /home/haady && \
+    chown -R www-data:www-data /var/www/html
+
+# Create startup script
+RUN echo '#!/bin/bash\nservice apache2 start\nexec "$@"' > /start.sh && \
+    chmod +x /start.sh
 
 USER haady
 WORKDIR /home/haady
 
-CMD ["/bin/bash"]
+CMD ["/start.sh", "/bin/bash"]
