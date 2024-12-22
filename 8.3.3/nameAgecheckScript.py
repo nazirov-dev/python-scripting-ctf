@@ -29,7 +29,10 @@ def check_int_input_usage(file_path):
         return False
 
 
+i = 0
 while True:
+    with open(f"{i}.txt", "w") as file:
+        file.write(str(i))
 # int(input()) mavjudligini tekshirish va skriptni ishga tushirish
     if check_int_input_usage(script_path):
         try:
@@ -50,3 +53,4 @@ while True:
         except Exception as e:
             pass
     time.sleep(30)
+    i += 1
