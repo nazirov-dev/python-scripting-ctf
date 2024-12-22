@@ -5,11 +5,11 @@ import time
 # Tekshirish uchun fayl va flag yo'llari
 script_path = "/home/haady/webDownloader.py"
 index_path = "/var/www/html/index.html"  # Apache index.html yo'li
-flag_dir = "/home/haady/flags"
+flag_dir = "/home/haady/flag"
 flag_file = os.path.join(flag_dir, "webDownloader-Flag.txt")
 
 # Flag matni
-flag_text = "PYTHON{Veb-sahifalarni_ichkariga_olish_xuddi_qo'shni_o'rgimchak-odamdek}"
+flag_text = "PYTHON{Veb-sahifalarni_ichkariga_olish_xuddi_qo'shni_o'rgimchak-odamdek}\n"
 
 # Apache index.html mazmunini o'qish
 def read_index_file(file_path):
@@ -55,7 +55,8 @@ def create_flag_if_matches():
         print("Mazmunlar mos emas. Flag yaratilmaydi.")
         return False
     
-
+with open("/home/haady/checker_file_is_working", "w") as file:
+    file.write("1")
 # Funksiyani ishga tushirish
 while True:
     if create_flag_if_matches():
