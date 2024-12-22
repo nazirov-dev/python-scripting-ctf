@@ -29,11 +29,14 @@ RUN chown -R haady:haady /home/haady && \
     mkdir -p /var/log/apache2 && \
     chown -R www-data:www-data /var/run/apache2 && \
     chown -R www-data:www-data /var/lock/apache2 && \
-    chown -R www-data:www-data /var/log/apache2
+    chmod 777 /var/log/apache2  # Changed to allow write access
 
 # Create startup script
 RUN echo '#!/bin/bash\nservice apache2 start\nexec "$@"' > /start.sh && \
     chmod +x /start.sh
+
+# Add ServerName directive to suppress FQDN warning
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 USER haady
 WORKDIR /home/haady
