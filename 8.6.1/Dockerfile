@@ -27,7 +27,7 @@ COPY start_checker.sh /var/server_listeners/start_checker.sh
 RUN chown -R haady:haady /var/server_listeners/start_checker.sh && \
     chmod +x /var/server_listeners/start_checker.sh && \
     echo '/var/server_listeners/start_checker.sh' >> /home/haady/.bashrc && \
-    pip3 install socket requests && \
+    pip3 install requests && \
     chown -R haady:haady /var/server_listeners/server_6666.py && \
     chown -R haady:haady /var/server_listeners/server_7777.py && \
     chown -R haady:haady /var/server_listeners/server_8888.py && \
@@ -37,9 +37,3 @@ WORKDIR /home/haady
 USER haady
 
 CMD ["/bin/bash"]
-
-
-
-
-
-
