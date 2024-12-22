@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def prinFlag():
+def printFlag():
     import base64
 
     decoded_data = base64.b64decode("UFlUSE9Oe1FhbmRheV9xaWxpYl91bmlfaWNoa2FyaWdhX29saXNofQ==")
