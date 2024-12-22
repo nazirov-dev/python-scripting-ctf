@@ -11,9 +11,9 @@ RUN apt-get update && apt-get install -y \
 RUN useradd -m -s /bin/bash haady && \
     echo "haady:haady" | chpasswd
 
-RUN mkdir /home/haady/importTest.py
-COPY importTest.py /home/haady/importTest.py
-COPY importMe.py /home/haady/importMe.py
+RUN mkdir /home/haady/import
+COPY importTest.py /home/haady/import/importTest.py
+COPY importMe.py /home/haady/import/importMe.py
 
 RUN chown -R haady:haady /home/haady
 
