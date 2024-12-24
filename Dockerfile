@@ -99,6 +99,5 @@ RUN chown -R haady:haady /home/haady/* && \
 
 USER root
 WORKDIR /home/haady
-RUN echo "/start.sh" >> /home/haady/.bashrc && \
-    echo "su haady" >> /home/haady/.bashrc
+RUN echo "/start.sh" >> /home/haady/.bashrc
 CMD ["/bin/bash"]
